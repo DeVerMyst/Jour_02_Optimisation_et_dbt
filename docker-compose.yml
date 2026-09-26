@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ynov_j2_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ynov_data_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - j2_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ynov_data_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgweb:
+    image: sosedoff/pgweb:latest
+    container_name: ynov_j2_pgweb
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/ynov_data_db?sslmode=disable
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  j2_pgdata:

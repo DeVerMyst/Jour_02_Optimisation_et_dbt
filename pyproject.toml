@@ -1,0 +1,18 @@
+[project]
+name = "jour-02-optimisation-et-dbt"
+version = "0.1.0"
+description = "Jour 2 : Optimisation de requêtes, Indexation stratégique et Transformation moderne avec dbt"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2.0",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.9",
+    "pyarrow>=15.0.0",
+    "fastparquet>=2024.2.0",
+    "dbt-core>=1.8.0",
+    "dbt-postgres>=1.8.0",
+    "ipykernel>=6.29.0",
+    "jupyter>=1.0.0",
+    "psycopg[binary]>=3.3.6",
+]
