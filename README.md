@@ -27,9 +27,13 @@ docker compose up -d
 uv sync
 ```
 
-#### 3. Ouvrir les Notebooks :
+#### 3. Ouvrir les Supports & Guides :
 * **Matin (Optimisation & Indexation) :** `02_Optimisation_et_Indexation_exercices.ipynb`
 * **Après-Midi (Projet dbt de Bout en Bout) :** `02_TP_ApresMidi_dbt_Projet_Exercices.ipynb`
+* **Guide Terminal dbt :** [`GUIDE_DBT_TERMINAL.md`](./GUIDE_DBT_TERMINAL.md) (création via `dbt init`, configuration, exécution et tests 100% en CLI)
+* **Guide Prise en Main Streamlit & Plotly :** [`GUIDE_STREAMLIT_PLOTLY.md`](./GUIDE_STREAMLIT_PLOTLY.md) (architecture web, `@st.cache_data`, widgets et graphiques interactifs)
+* **Mission Défi Extension dbt + Streamlit :** [`MISSION_STREAMLIT_EXTENSION.md`](./MISSION_STREAMLIT_EXTENSION.md) (création du modèle `dim_genre_profile` et connexion au dashboard)
+* **Template Python Streamlit :** `app_template.py` (lancement avec `uv run streamlit run app_template.py`)
 
 ---
 
